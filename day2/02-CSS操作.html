@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-CSS操作</title>
+</head>
+<body>
+<ul>
+    <li>王一博</li>
+    <li>肖战</li>
+    <li>蔡徐坤</li>
+    <li>吴亦凡</li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        //修改一个样式
+//        $('li')
+//                .css('backgroundColor','pink')
+//                .css('fontSize','30px')
+//                .css('color','red');
+
+        //css(obj)
+        //修改多个样式
+        $('li').css({
+            backgroundColor:'pink',
+            fontSize:'30px',
+            color:'red',
+            border:'1px solid red'
+        })
+        $('li').eq(0).css('fontSize','30px');
+        $('li').eq(1).css('fontSize','35px');
+        $('li').eq(2).css('fontSize','40px');
+        $('li').eq(3).css('fontSize','45px');
+
+        //隐式迭代：
+            //设置操作的时候：会给jq内部的所有对象都设置上相同的值
+            //获取的时候：只会返回第一个元素对应的值
+        //获取样式
+        console.log( $('li').css('fontSize'));
+//        alert($('li').css('fontSize'));
+    })
+</script>
+</body>
+</html>

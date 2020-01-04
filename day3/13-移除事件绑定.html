@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-移除事件绑定</title>
+</head>
+<body>
+<input type="button" value="触发" id="btn">
+<p>我是一个p元素</p>
+<p>我是一个p元素</p>
+<p>我是一个p元素</p>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+     $('p').on('click mouseenter',function () {
+         alert('hehe');
+     })
+       //移除p的mouseenter事件，off中没有参数就移除p注册的全部事件
+       $('p').off('mouseenter');
+
+       //toggle:切换  trigger:触发
+       $('#btn').on('click',function () {
+           //触发p元素的点击事件
+//           $('p').click();
+           $('p').trigger('click');
+       })
+
+   })
+
+</script>
+
+</body>
+</html>

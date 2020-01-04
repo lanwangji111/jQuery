@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-自定义动画</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background-color: pink;
+            position: absolute;
+        }
+        #box2{
+             background-color: #0099cc;
+             margin-top: 150px;
+         }
+        #box3{
+            background-color: yellowgreen;
+            margin-top: 300px;
+        }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+       $(function(){
+            $('input').eq(0).click(function () {
+               //第一个参数：对象，需要的动画的样式
+                // 第二个参数：需要传参数的时间
+                // 第三个参数：动画的执行效果
+                // 第四个参数：回调函数
+
+
+               $('#box1').animate({left:800},1000);
+                //swing秋千  摇摆
+                $('#box2').animate({left:800},1000,'swing');
+                //linear线性  匀速
+                $('#box3').animate({left:800},1000,'linear',function () {
+                    console.log('hhh');
+                });
+           })
+       });
+    </script>
+
+</head>
+<body>
+<input type="button" value="开始">
+<input type="button" value="结束">
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+</body>
+</html>

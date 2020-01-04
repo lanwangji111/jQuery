@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-京东轮播图</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+
+        .slider{
+            height:400px;
+            width:600px;
+            margin:30px auto;
+            position: relative;
+            /*占据自己一行的位置*/
+        }
+        .slider li{
+            position: absolute;
+            display: none;
+        }
+        img{
+            width:600px;
+            height:300px;
+        }
+        .slider li:first-child{
+            display: block;
+        }
+
+        .arrow{
+            display: none;
+        }
+        .slider:hover .arrow {
+            display: block;
+        }
+        /*}鼠标出现，箭头才出来*/
+        .arrow-left,
+        .arrow-right{
+            font-family: "SimSun", "宋体";
+            width: 30px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 30px;
+
+        }
+        .arrow-left:hover,
+        .arrow-right:hover{
+            background-color: rgba(0,0,0,0.5);
+        }
+        .arrow-left{
+            left:0;
+        }
+        .arrow-right{
+            right: 0;
+        }
+
+    </style>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+       $(function(){
+           var count=0;
+
+            $('.arrow-right').click(function () {
+                count++;
+                if(count==$('.slider li').length)
+                {
+                    count=0;
+                }
+
+                console.log(count);
+                //让count渐渐显示，其它兄弟逐渐隐藏
+                $('.slider li').eq(count).fadeIn().siblings('li').fadeOut();
+            });
+
+           $('.arrow-left').click(function () {
+               count--;
+               if(count==-1)
+               {
+                   count=$('.slider li').length-1;
+               }
+
+               console.log(count);
+               //让count渐渐显示，其它兄弟逐渐隐藏
+               $('.slider li').eq(count).fadeIn().siblings('li').fadeOut();
+           });
+       })
+    </script>
+
+</head>
+<body>
+<div class="slider">
+    <ul>
+        <li><a href="#"><img src="images/1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/2.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/3.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/4.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/5.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/6.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/7.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/8.jpg" alt=""></a></li>
+    </ul>
+
+    <div class="arrow">
+        <span class="arrow-left">&lt;</span>
+        <span class="arrow-right">&gt;</span>
+    </div>
+</div>
+</body>
+</html>

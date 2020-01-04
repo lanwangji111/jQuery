@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19-each方法</title>
+    <style>
+        div{
+            width:150px;
+            height:150px;
+            background-color: pink;
+            float: left;
+            margin:10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<div>什么也看不见</div>
+<div>什么也看不见</div>
+<div>什么也看不见</div>
+<div>什么也看不见</div>
+<div>什么也看不见</div>
+<div>什么也看不见</div>
+<div>什么也看不见</div>
+<div>什么也看不见</div>
+<div>什么也看不见</div>
+<div>什么也看不见</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+//     for(var i=0;i<$('div').length;i++)
+//     {
+//         $('div').eq(i).css('opacity',(i+1)/10);
+//     }
+       $('div').each(function (index,element) {
+           $(element).css('opacity',(index+1)/10);
+       })
+   })
+</script>
+
+</body>
+</html>

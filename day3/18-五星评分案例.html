@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18-五星评分案例</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        ul{
+            list-style: none;
+            margin:100px auto;
+        }
+        .comment{
+            font-size: 50px;
+            color: red;
+        }
+        ul li{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<ul class="comment">
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+    //1.给li注册鼠标经过事件，让自己和前面所有的兄弟都变实心
+       var wjx_k='☆';
+       var wjx_s='★';
+       $('.comment>li').on('mouseenter',function () {
+//           $(this).text(wjx_s).prevAll().text(wjx_s);
+//           //这里prevAll()获取了一次，不能再链式下去
+//           $(this).nextAll().text(wjx_k);
+           $(this).text(wjx_s).prevAll().text(wjx_s).end().nextAll().text(wjx_k);
+       })
+
+       //2.给ul注册鼠标离开事件
+       $('.comment').on('mouseleave',function () {
+           $(this).children().text(wjx_k);
+
+           //这里需要知道最后点击的五角星是谁 current 让current和current前面的变成实心就行
+           $('.current').text(wjx_s).prevAll().text(wjx_s);
+       })
+
+       //3.注册点击事件
+       $('.comment>li').on('click',function () {
+           $(this).addClass('current').siblings().removeClass('current');
+       })
+
+   })
+</script>
+
+</body>
+</html>

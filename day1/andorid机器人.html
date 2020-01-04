@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>andorid机器人</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        body{
+            background-color: #ccc;
+        }
+        .content{
+            width:300px;
+            height:220px;
+            border:1px solid red ;
+            margin:100px auto;
+        }
+        .an_header{
+            width: 100px;
+            height: 50px;
+            margin: 10px auto;
+            border-radius: 50px 50px 0 0;
+            background-color: #0099cc;
+            position: relative;
+        }
+
+        /*使用伪元素添加眼镜*/
+        .an_header::before,
+        .an_header::after{
+            /*1.一定设置content属性*/
+            content: '';
+            /*2.如果需要设置宽度就应该转换其为块级元素，它默认是行级元素 float display position  */
+            width:10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: white;
+            position: absolute;
+            bottom:20px;
+        }
+        .an_header::before{
+            left:30px;
+        }
+        .an_header::after{
+            right:30px;
+        }
+        .an_body{
+            width: 100px;
+            height:80px;
+            margin:0 auto;
+            background-color: #0099cc ;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            position: relative;
+        }
+        .an_body::before,
+        .an_body::after{
+            content: '';
+            position: absolute;
+            width:10px;
+            height:60px;
+            background-color: #0099cc;
+            -webkit-border-radius:;
+            -moz-border-radius:;
+            border-radius:5px;
+            bottom:10px;
+        }
+        .an_body::before{
+            left:-20px;
+        }
+        .an_body::after{
+            right:-20px;
+        }
+        .an_footer{
+            width: 100px;
+            height: 50px;
+            position: relative;
+            /*background-color:pink;*/
+            margin:0 auto;
+        }
+        .an_footer::after,
+        .an_footer::before{
+            content: '';
+            width:10px;
+            height:50px;
+            position: absolute;
+            border-radius: 0 0 8px 8px;
+            background-color: #0099cc;
+        }
+        .an_footer::before{
+            left:30px;
+        }
+        .an_footer::after{
+            right:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="an_header"></div>
+    <div class="an_body"></div>
+    <div class="an_footer"></div>
+</div>
+</body>
+</html>

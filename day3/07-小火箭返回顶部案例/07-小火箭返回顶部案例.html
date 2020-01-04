@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-小火箭返回顶部案例</title>
+    <style>
+        body{
+            height:8000px;
+        }
+        a{
+            color: #FFF;
+        }
+        .actGotop{
+            position: fixed;
+            bottom:50px;
+            right:50px;
+            width:150px;
+            height:195px;
+            display: none;
+            z-index:100;
+            /*用于一个元素加在宁一个元素上，例如：文字和图片*/
+        }
+        .actGotop a,.actGotop a:link{
+            width:150px;
+            height:195px;
+            display: inline-block;
+            background: url("images/gotop.png") no-repeat;
+            outline:none;
+        }
+        .actGotop a:hover{
+            width: 150px;
+            height:195px;
+            background: url("images/gotop.gif") no-repeat;
+        }
+    </style>
+</head>
+<body>
+<!--返回顶部小火箭-->
+<div class="actGotop"><a href="Javascript:;" title="Top"></a></div>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+        //当页面超出1000px时，让小火箭显示出来，如果小于1000，就让小火箭消失
+       $(window).scroll(function () {
+           if($(this).scrollTop()>=1000){
+               $('.actGotop').stop().fadeIn(1000);
+           }else {
+               $('.actGotop').stop().fadeOut(1000);
+           }
+       })
+       $('.actGotop').click(function () {
+//           $('html,body').animate({scrollTop:0},3000)
+           //html,body解决兼容性问题
+
+           //scrollTop为0
+           $(window).scrollTop(0);
+       })
+   })
+</script>
+
+</body>
+</html>

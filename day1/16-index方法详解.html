@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-index方法详解</title>
+</head>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+        $('li').click(function () {
+            console.log($(this).index());
+//            index返回当前元素在所有兄弟元素中的索引，这里把li换成a就出不来效果
+        })
+   })
+</script>
+
+<body>
+<ul>
+    <li><a href="#">我是链接</a></li>
+    <li><a href="#">我是链接</a></li>
+    <li><a href="#">我是链接</a></li>
+    <li><a href="#">我是链接</a></li>
+    <li><a href="#">我是链接</a></li>
+    <li><a href="#">我是链接</a></li>
+    <li><a href="#">我是链接</a></li>
+    <li><a href="#">我是链接</a></li>
+    <li><a href="#">我是链接</a></li>
+    <li><a href="#">我是链接</a></li>
+</ul>
+</body>
+</html>

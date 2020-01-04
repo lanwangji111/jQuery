@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21-微博发布案例</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        ul{
+            list-style: none;
+        }
+        .big{
+            width: 500px;
+            margin: 100px auto;
+            border:1px solid black;
+            padding:20px;
+        }
+        .small{
+            width: 300px;
+            height: 160px;
+            /*这里只有text设置了高度，其余都没有设置，这样发布消息之后外框高度可以随之改变*/
+            outline: none;
+            resize: none;
+        }
+        ul{
+            width: 300px;
+            padding-left: 80px;
+        }
+        ul li{
+            line-height: 25px;
+            border-bottom: 1px dashed #cccccc;
+            /*下划线虚线*/
+        }
+
+        input{
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+<div class="big">
+    <!--<h5>微博发布</h5>-->
+    <span>微博发布</span>
+    <textarea name="" class="small" cols="30" rows="10"></textarea>
+    <input  id="btn" type="button" value="发布"><br/>
+    <input  id="btn1" type="button" value="清空">
+    <ul id="ul"></ul>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+        $('#btn').click(function () {
+            if($('.small').val().trim().length==0){
+                return;
+            }
+            $('<li></li>').text($('.small').val()).prependTo('#ul');
+        })
+       $('input').eq(1).click(function () {
+           $('.small').val('');
+       })
+   })
+</script>
+
+</body>
+</html>

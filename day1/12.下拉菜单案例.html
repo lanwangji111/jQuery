@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>14.下拉菜单案例</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		.wrap{
+			width: 330px;
+			height: 30px;
+			margin: 100px auto 0;
+			padding-left: 10px;
+			background-image: url(../imgs/bg.jpg);
+		}
+		.wrap li{
+			background-image: url(../imgs/libg.jpg);
+		}/*选中的是li里面所有的元素，一级标题和二级标题*/
+	 	.wrap>ul>li{
+	 		float: left;/*元素向左浮动*/
+	 		margin-right: 10px;
+	 		position: relative;
+	 	}/*选中的是li里面的一级标题*/
+	 	.wrap a{
+	 		display: block;
+	 		/*此元素将显示为块级元素，此元素前后会带有换行符。*/
+	 		height: 30px;
+	 		width: 100px;
+	 		text-decoration: none;
+	 		/*没有文本装饰*/
+	 		color: #000;
+	 		line-height: 30px;
+	 		/*行间距*/
+	 		text-align: center;
+	 	}
+	 	.wrap li ul{
+	 		position: absolute;
+	 		top: 30px;
+	 		display: none;
+	 	}/*选中二级标题*/
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+
+	<script>
+		//2.函数入口
+		
+		$(function(){
+
+			var $li=$('.wrap>ul>li');
+
+			//给li注册鼠标经过事件，让自己的ul显示出来
+			$li.mouseenter(function(){
+				//找到所以的儿子，并且还得是ul
+				$(this).children('ul').show();
+				console.log('hehe');
+
+			});
+			$li.mouseleave(function(){
+				$(this).children('ul').hide();
+				});
+			// 使用Mouseover，鼠标触及二级标题也会触发hehe
+			// 使用mouseenter，鼠标触及二级标题不会触发hehe
+
+		})
+		
+	</script>
+	
+</head>
+<body>
+	<div class="wrap">
+		<ul>
+			<li>
+				<a href="javascript:void(0);">一级菜单1</a>
+				<ul class="ul">
+					<li><a href="javascript:void(0);">二级菜单11</a></li>
+					<li><a href="javascript:void(0);">二级菜单12</a></li>
+					<li><a href="javascript:void(0);">二级菜单13</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="javascript:void(0);">一级菜单2</a>
+				<ul class="ul">
+					<li><a href="javascript:void(0);">二级菜单21</a></li>
+					<li><a href="javascript:void(0);">二级菜单22</a></li>
+					<li><a href="javascript:void(0);">二级菜单23</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="javascript:void(0);">一级菜单3</a>
+				<ul class="ul">
+					<li><a href="javascript:void(0);">二级菜单31</a></li>
+					<li><a href="javascript:void(0);">二级菜单32</a></li>
+					<li><a href="javascript:void(0);">二级菜单33</a></li>
+				</ul>
+			</li>
+
+		</ul>
+	</div>
+	<!--  1.需要引入JQuery文件 -->
+	
+
+</body>
+</html>

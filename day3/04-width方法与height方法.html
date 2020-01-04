@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-width方法与height方法</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background-color: pink;
+            padding:10px;
+            border:10px solid #000000;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+       //获取div的宽度
+//        console.log($('div').css('width'));
+//       $('div').css('width','400px');
+
+       //直接获取到数字
+       console.log($('div').width());//width
+       console.log($('div').innerWidth());//padding+width
+       console.log($('div').outerWidth());//padding+width+border
+       console.log($('div').outerWidth(true));//margin+padding+width+border
+//       $('div').width(400);
+
+       //获取可视区的宽高
+//       $(window).resize(function () {
+//           console.log($(this).width());
+//           console.log($(this).height());
+//       })
+   })
+</script>
+
+</body>
+</html>

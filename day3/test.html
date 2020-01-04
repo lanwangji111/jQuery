@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 50px;
+            height: 50px;
+            color: red;
+            float: left;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+        var wjx_s='★';
+        var wjx_k='☆';
+       $('ul>li').mouseenter(function () {
+           $(this).text(wjx_s).prevAll().text(wjx_s);
+           $(this).nextAll().text(wjx_k);
+       })
+       $('ul').mouseleave(function () {
+           $(this).children().text(wjx_k);
+           $('.tag').text(wjx_s).prevAll().text(wjx_s);
+       })
+       $('ul>li').on('click',function () {
+//           $(this).prevAll().text(wjx_s).end().next().text(wjx_k);
+           $(this).addClass('tag').siblings().removeClass('tag');
+       })
+   })
+</script>
+
+</body>
+</html>

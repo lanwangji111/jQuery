@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-三组基本动画</title>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+       $(function(){
+           //显示show()
+            $('input').eq(0).click(function () {
+//                show()不传参数，没有动画效果
+//                $('div').show();
+
+//                show(speed)
+//                speed动画的持续时间  可以是毫秒值  还可以是固定字符串
+//                fast:200ms  normal:400ms  slow:600ms
+//                $('div').show(1000);
+
+//                show([speed],[callback])
+                  $('div').show(1000,function () {
+                      console.log('hah');
+                  });
+            })
+
+           //隐藏hide()
+           $('input').eq(1).click(function () {
+               $('div').hide();
+           })
+
+
+           //滑入slideDown()
+           $('input').eq(2).click(function () {
+//               slideDown:如果不传参数，有一个默认值normal
+//               $('div').slideDown();
+//               $('div').slideDown(1000);
+               $('div').slideDown(1000,function () {
+                   console.log('hh');
+               })
+           })
+           //滑出slideUp()
+           $('input').eq(3).click(function () {
+               $('div').slideUp();
+           })
+            //切换slideToggle()  切换效果是滑入和滑出之间的切换
+           $('input').eq(4).click(function () {
+               $('div').slideToggle();
+           })
+
+
+           //淡入fadeIn()
+           $('input').eq(5).click(function () {
+               $('div').fadeIn(1000);
+           })
+           //淡出fadeOut()
+           $('input').eq(6).click(function () {
+               $('div').fadeOut(1000);
+           })
+           //切换fadeToggle()
+           $('input').eq(7).click(function () {
+               $('div').fadeToggle(1000);
+           })
+       })
+    </script>
+
+</head>
+<body>
+<input type="button" value="显示">
+<input type="button" value="隐藏">
+<input type="button" value="滑入">
+<input type="button" value="滑出">
+<input type="button" value="slide切换">
+<input type="button" value="淡入">
+<input type="button" value="淡出">
+<input type="button" value="fade切换">
+<div></div>
+</body>
+</html>

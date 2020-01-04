@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-tab栏切换</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        ul{
+            list-style:none;
+        }
+        .wrapper{
+            width:600px;
+            height: 500px;
+            margin:0 auto;;
+        }
+        .class1{
+            border:1px solid pink;
+            border-bottom: 0;
+        }
+        .class1 li{
+            position: relative;
+            border:4px solid pink;
+            width: 100px;
+            height: 30px;
+            line-height: 34px;
+            cursor: pointer;
+
+        }
+        li{
+            float: left;
+            font-size:20px;
+            color: black;
+            padding:12px;
+            text-align: center;
+            border:1px solid pink;
+        }
+        ul li img{
+            /*display: none;*/
+            width:600px;
+            height:300px;
+        }
+        .class2 li.selected{
+            display: none;
+
+        }
+        .class1 li.active{
+            /*border-color: red;*/
+            border-top:4px solid red;
+            border-bottom: 0;
+        }
+    </style>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        //方法一：
+        $(function () {
+            $('.class1>li').mouseenter(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+               var idx=$(this).index();
+               $('.class2>li').eq(idx).removeClass('selected').siblings().addClass('selected');
+             })
+        })
+        //方法二：
+//       $(function(){
+//         $('.class1>li').mouseenter(function () {
+//             var idx=$(this).index();
+//            $('.class2>li').eq(idx).show().siblings().hide();
+//         })
+//       })
+    </script>
+
+</head>
+<body>
+<div class="wrapper">
+    <ul class="class1">
+        <li class="active">国际大牌</li>
+        <li>国妆名品</li>
+        <li>清洁用品</li>
+        <li>男士精品</li>
+    </ul>
+    <ul class="class2">
+        <li class="selected"><a href="#"><img src="imgs/guojidapai.jpg" ></a></li>
+        <li><a href="#"><img src="imgs/guozhuangmingpin.jpg" ></a></li>
+        <li><a href="#"><img src="imgs/qingjieyongpin.jpg"></a></li>
+        <li><a href="#"><img src="imgs/nanshijingpin.jpg" ></a></li>
+    </ul>
+</div>
+</body>
+</html>

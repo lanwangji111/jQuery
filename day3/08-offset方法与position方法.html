@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-offset方法与position方法</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .father{
+            width:400px;
+            height:400px;
+            margin:100px;
+            position: relative;
+            background-color: red;
+        }
+        .son{
+            width:200px;
+            height:200px;
+            position: absolute;
+            top:100px;
+            left:100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+       //获取元素相对document的位置
+       console.log($('.son').offset());
+       //获取元素相对有定位的父元素的位置
+       console.log($('.son').position());
+   })
+</script>
+
+</body>
+</html>

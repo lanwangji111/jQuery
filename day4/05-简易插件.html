@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-简易插件</title>
+    <style>
+        div{
+            width: 400px;
+            height:300px;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+<div></div>
+<p>111</p>
+<script src="jquery-1.12.4.js"></script>
+<script src="jquery.bgColor.js"></script>
+<script>
+   $(function(){
+
+        $('div').bgColor('green');
+       $('p').bgColor('blue').width(300);
+   })
+</script>
+
+</body>
+</html>

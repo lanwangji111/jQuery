@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-on注册事件的两种方式</title>
+    <style>
+        div{
+            width:400px;
+            height:400px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="增加" id="btn">
+<div>
+    <p>11111</p>
+    <p>11111</p>
+    <p>11111</p>
+    <p>11111</p>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+//     $('p').on('click',function () {
+//         alert('嘻嘻');
+//     })
+
+       //执行顺序 ：点击1111：最先执行p自己有的事件
+                           // 优先执行div-p委托事件 ，
+                              // 再执行 自己div注册事件
+       $('div').on('click',function () {
+           alert('我是div注册事件');
+       })
+
+       //on委托事件，给p注册
+       $('div').on('click','p',function () {
+           alert('我是div-p委托事件');
+       })
+       $('p').on('click',function () {
+           alert('我是p注册事件');
+       })
+       //on给自己注册事件，给按钮注册
+       $('#btn').on('click',function () {
+           $('<p>新增加的p元素</p>').appendTo('div');
+       })
+   })
+</script>
+
+</body>
+</html>

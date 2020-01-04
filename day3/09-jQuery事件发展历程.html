@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-jQuery事件发展历程</title>
+    <style>
+        div{
+            width:400px;
+            height:400px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="按钮">
+    <span>aaa</span>
+    <p>1111</p>
+    <p>2222</p>
+    <p>3333</p>
+    <p>4444</p>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(function(){
+       $('input').click(function () {
+           $('<p>我是新增加的p元素</p>').appendTo('div');
+       })
+
+       //delegate：代理，委托
+       //要给div注册一个委托事件，但最终不是有执行，而是p执行
+       //第一个参数：selector:事件最终由谁来执行
+       //第二个参数：事件的类型
+       //第三个参数：函数
+       $('div').delegate('p','click',function () {
+           alert('hehe');
+       })
+
+
+       //注册简单事件，缺点：一次只能注册一个事件
+//     $('div').click(function () {
+//         alert('哈哈');
+//     })
+
+       //bind方式
+//       $('p').bind('click mouseenter',function () {
+//           alert('呵呵');
+//       });
+
+//       $('p').bind({
+//           click:function () {
+//               alert('呵呵');
+//           },
+//           mouseenter:function () {
+//               alert('哈哈');
+//           }
+//       })
+
+   })
+</script>
+
+</body>
+</html>

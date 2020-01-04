@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>10.过滤选择器</title>
+	<style type="text/css">
+	 	
+	</style>
+	
+</head>
+<body>
+	<ul>
+		<li>我是第1个li</li>
+		<li>我是第2个li</li>
+		<li>我是第3个li</li>
+		<li>我是第4个li</li>
+		<li>我是第5个li</li>
+		<li>我是第6个li</li>
+		<li>我是第7个li</li>
+		<li>我是第8个li</li>
+		<li>我是第9个li</li>
+		<li>我是第10个li</li>
+	</ul>
+	<!--  1.需要引入JQuery文件 -->
+	<script src="jquery-1.12.4.js"></script>
+
+	<script>
+		//2.函数入口
+		
+		$(function(){
+
+			//下标为偶数，过滤
+			$('li:even').css('backgroundColor','red');
+			//下标为奇数
+			$('li:odd').css('backgroundColor','pink');
+
+			$('li:first').css('fontSize','32px');
+			$('li:last').css('fontSize','50px');
+			//下标为2
+			$('li:eq(1)').css('fontSize','32px');
+			//下标大于1的所以元素
+			// $('li:gt(1)').css('fontSize','12px');
+			//下标小于1的所以元素
+			$('li:lt(1)').css('color','green');
+		})
+		
+	</script>
+
+</body>
+</html>

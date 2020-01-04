@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-属性操作</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+       $(function(){
+           //设置单个属性
+//            $('img').attr('alt','图破了');
+//           $('img').attr('title','错错错');
+
+           //设置多个属性
+//           $('img').attr({
+//               alt:'图破了',
+//               title:'错错错',
+//               aa:'bb'//自定义属性
+//           })
+            //获取属性
+           console.log($('img').attr('alt'));
+       })
+    </script>
+
+</head>
+<body>
+<!--样式：在style里写的，用css操作-->
+<!--属性：在标签里面写的，用attr方法操作-->
+<img src="04.gif" alt="突破了" title="对对对">
+</body>
+</html>

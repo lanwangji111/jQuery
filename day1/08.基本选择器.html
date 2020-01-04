@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>08.基本选择器</title>
+	<style type="text/css">
+	 	
+	</style>
+	
+</head>
+<body>
+	<ul>
+		<li>我是第1个li</li>
+		<li>我是第2个li</li>
+		<li>我是第3个li</li>
+		<li id="four">我是第4个li</li>
+		<li>我是第5个li</li>
+		<li class="green">我是第6个li</li>
+		<li class="green">我是第7个li</li>
+		<li>我是第8个li</li>
+		<li>我是第9个li</li>
+		<li>我是第10个li</li>
+	</ul>
+	<div class="green">111</div>
+	<div class="green">111</div>
+	<div class="green">111</div>
+	<div class="green">111</div>
+	<!--  1.需要引入JQuery文件 -->
+	<script src="jquery-1.12.4.js"></script>
+
+	<script>
+		//2.函数入口
+		
+		$(function(){
+			//jquery如何设置样式
+			//css(name,value)
+			//name:样式名  value：样式值
+
+			// $('#four').css('backgroundColor','red');
+			// $('.green').css('backgroundColor','green');
+
+			// $('li').css('backgroundColor','green');
+
+			//交集 并集
+			// $('#four, .green').css('backgroundColor','pink');
+			$('li.green').css('backgroundColor','pink');
+		})
+		
+	</script>
+
+</body>
+</html>

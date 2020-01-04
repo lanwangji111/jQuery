@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-jQuery.color.js的使用</title>
+    <style>
+        div{
+            width: 400px;
+            height:400px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<!--<img data-original="02.gif">-->
+<!--<img src="02.gif" alt="">-->
+<!--1.引入jquery的js文件-->
+<script src="jquery-1.12.4.js"></script>
+<!--&lt;!&ndash;2.引入插件的js文件&ndash;&gt;-->
+<script src="jquery.color.js"></script>
+
+<!--<script src="jquery.lazyload.js"></script>-->
+<script>
+   $(function(){
+       //jquery不支持颜色的渐变
+     $('div').animate({backgroundColor:'green'},3000,function () {
+         alert('呵呵');
+     })
+//       $('img').lazyload();
+   })
+</script>
+
+</body>
+</html>

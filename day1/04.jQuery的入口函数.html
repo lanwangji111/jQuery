@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>04.jQuery的入口函数</title>
+	<style type="text/css">
+	 	
+	</style>
+	
+</head>
+<body>
+	<input type="button" id="btn1" value="展示">
+	<input type="button" id="btn2" value="设置内容">
+	<div></div>
+	<div></div>
+	<div></div>
+
+	<!--  1.需要引入JQuery文件 -->
+	<script src="jquery-1.12.4.js"></script>
+
+	<script>
+		window.onload=function(){
+			console.log('我是js的入口函数');
+		}
+		//2.函数入口
+		$(document).ready(function(){
+			console.log('我是jq入口函数的第一种写法');
+		});
+		$(function(){
+			console.log('我是jq入口函数的第二种写法');
+		});
+	</script>
+
+</body>
+</html>
